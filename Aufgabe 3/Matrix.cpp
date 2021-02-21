@@ -65,9 +65,15 @@ Matrix33 Matrix33::operator+(const Matrix33& rmatrix) const {
 }
 
 Matrix33 Matrix33::operator*(const Matrix33& rmatrix) const {
-    return Matrix33(m_matrix[0][0] * rmatrix.m_matrix[0][0], m_matrix[0][1] * rmatrix.m_matrix[1][0], m_matrix[0][2] * rmatrix.m_matrix[2][0],
-                    m_matrix[1][0] * rmatrix.m_matrix[0][1], m_matrix[1][1] * rmatrix.m_matrix[1][1], m_matrix[1][2] * rmatrix.m_matrix[2][1],
-                    m_matrix[2][0] * rmatrix.m_matrix[0][2], m_matrix[2][1] * rmatrix.m_matrix[1][2], m_matrix[2][2] * rmatrix.m_matrix[2][2]);
+    return Matrix33(m_matrix[0][0] * rmatrix.m_matrix[0][0] + m_matrix[0][1] * rmatrix.m_matrix[1][0] + m_matrix[0][2] * rmatrix.m_matrix[2][0],
+                    m_matrix[0][0] * rmatrix.m_matrix[0][1] + m_matrix[0][1] * rmatrix.m_matrix[1][1] + m_matrix[0][2] * rmatrix.m_matrix[2][1],
+                    m_matrix[0][0] * rmatrix.m_matrix[0][2] + m_matrix[0][1] * rmatrix.m_matrix[1][2] + m_matrix[0][2] * rmatrix.m_matrix[2][2],
+                    m_matrix[1][0] * rmatrix.m_matrix[0][0] + m_matrix[1][1] * rmatrix.m_matrix[1][0] + m_matrix[1][2] * rmatrix.m_matrix[2][0],
+                    m_matrix[1][0] * rmatrix.m_matrix[0][1] + m_matrix[1][1] * rmatrix.m_matrix[1][1] + m_matrix[1][2] * rmatrix.m_matrix[2][1],
+                    m_matrix[1][0] * rmatrix.m_matrix[0][2] + m_matrix[1][1] * rmatrix.m_matrix[1][2] + m_matrix[1][2] * rmatrix.m_matrix[2][2],
+                    m_matrix[2][0] * rmatrix.m_matrix[0][0] + m_matrix[2][1] * rmatrix.m_matrix[1][0] + m_matrix[2][2] * rmatrix.m_matrix[2][0],
+                    m_matrix[2][0] * rmatrix.m_matrix[0][1] + m_matrix[2][1] * rmatrix.m_matrix[1][1] + m_matrix[2][2] * rmatrix.m_matrix[2][1],
+                    m_matrix[2][0] * rmatrix.m_matrix[0][2] + m_matrix[2][1] * rmatrix.m_matrix[1][2] + m_matrix[2][2] * rmatrix.m_matrix[2][2]);
 }
 
 Matrix33 Matrix33::operator*(int rint) const {
@@ -76,8 +82,8 @@ Matrix33 Matrix33::operator*(int rint) const {
                     m_matrix[2][0] * rint, m_matrix[2][1] * rint, m_matrix[2][2] * rint);
 }
 
-Matrix33 Matrix33::operator+=(const Matrix33& rmatrix) const {
-    return Matrix33(m_matrix[0][0] + rmatrix.m_matrix[0][0], m_matrix[0][1] + rmatrix.m_matrix[0][1], m_matrix[0][2] + rmatrix.m_matrix[0][2],
-                    m_matrix[1][0] + rmatrix.m_matrix[1][0], m_matrix[1][1] + rmatrix.m_matrix[1][1], m_matrix[1][2] + rmatrix.m_matrix[1][2],
-                    m_matrix[2][0] + rmatrix.m_matrix[2][0], m_matrix[2][1] + rmatrix.m_matrix[2][1], m_matrix[2][2] + rmatrix.m_matrix[2][2]);
+Matrix33 Matrix33::operator+=(const Matrix33& rmatrix) {
+    return Matrix33(m_matrix[0][0] += rmatrix.m_matrix[0][0], m_matrix[0][1] += rmatrix.m_matrix[0][1], m_matrix[0][2] += rmatrix.m_matrix[0][2],
+                    m_matrix[1][0] += rmatrix.m_matrix[1][0], m_matrix[1][1] += rmatrix.m_matrix[1][1], m_matrix[1][2] += rmatrix.m_matrix[1][2],
+                    m_matrix[2][0] += rmatrix.m_matrix[2][0], m_matrix[2][1] += rmatrix.m_matrix[2][1], m_matrix[2][2] += rmatrix.m_matrix[2][2]);
 }

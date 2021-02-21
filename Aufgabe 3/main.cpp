@@ -51,11 +51,15 @@ int main()
     // Ausdruecke richtig funktionieren und geben Sie nach jeder Rechnung die Ergebnisse aus:
 
     Matrix33 matResult1 = matA + matB;
+    std::cout << "Output matResult1:\n" << matResult1.toString() << std::endl;
     Matrix33 matResult2 = matA * matB;
+    std::cout << "Output matResult2:\n" << matResult2.toString() << std::endl;
     Matrix33 matResult3 = matA * 5;
+    std::cout << "Output matResult3:\n" << matResult3.toString() << std::endl;
     matResult1 += matB;
+    std::cout << "Output matResult1:\n" << matResult1.toString() << std::endl;
     Matrix33 matC = matResult2 += matB;
-
+    std::cout << "Output matC:\n" << matC.toString() << std::endl;
 
     // ------------------------------------------------------------------------
     // 3. Aufgabe (Operatoren)
