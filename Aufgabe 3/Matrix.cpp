@@ -59,9 +59,25 @@ std::string Matrix33::toString() const
 //Operator
 
 Matrix33 Matrix33::operator+(const Matrix33& rmatrix) const {
+    return Matrix33(m_matrix[0][0] + rmatrix.m_matrix[0][0], m_matrix[0][1] + rmatrix.m_matrix[0][1], m_matrix[0][2] + rmatrix.m_matrix[0][2],
+                    m_matrix[1][0] + rmatrix.m_matrix[1][0], m_matrix[1][1] + rmatrix.m_matrix[1][1], m_matrix[1][2] + rmatrix.m_matrix[1][2],
+                    m_matrix[2][0] + rmatrix.m_matrix[2][0], m_matrix[2][1] + rmatrix.m_matrix[2][1], m_matrix[2][2] + rmatrix.m_matrix[2][2]);
+}
 
+Matrix33 Matrix33::operator*(const Matrix33& rmatrix) const {
+    return Matrix33(m_matrix[0][0] * rmatrix.m_matrix[0][0], m_matrix[0][1] * rmatrix.m_matrix[1][0], m_matrix[0][2] * rmatrix.m_matrix[2][0],
+                    m_matrix[1][0] * rmatrix.m_matrix[0][1], m_matrix[1][1] * rmatrix.m_matrix[1][1], m_matrix[1][2] * rmatrix.m_matrix[2][1],
+                    m_matrix[2][0] * rmatrix.m_matrix[0][2], m_matrix[2][1] * rmatrix.m_matrix[1][2], m_matrix[2][2] * rmatrix.m_matrix[2][2]);
+}
 
+Matrix33 Matrix33::operator*(double& rdou) const {
+    return Matrix33(m_matrix[0][0] * rdou, m_matrix[0][1] * rdou, m_matrix[0][2] * rdou,
+                    m_matrix[1][0] * rdou, m_matrix[1][1] * rdou, m_matrix[1][2] * rdou,
+                    m_matrix[2][0] * rdou, m_matrix[2][1] * rdou, m_matrix[2][2] * rdou);
+}
 
-
-    return ;
+Matrix33 Matrix33::operator+=(const Matrix33& rmatrix) const {
+    return Matrix33(m_matrix[0][0] + rmatrix.m_matrix[0][0], m_matrix[0][1] + rmatrix.m_matrix[0][1], m_matrix[0][2] + rmatrix.m_matrix[0][2],
+                    m_matrix[1][0] + rmatrix.m_matrix[1][0], m_matrix[1][1] + rmatrix.m_matrix[1][1], m_matrix[1][2] + rmatrix.m_matrix[1][2],
+                    m_matrix[2][0] + rmatrix.m_matrix[2][0], m_matrix[2][1] + rmatrix.m_matrix[2][1], m_matrix[2][2] + rmatrix.m_matrix[2][2]);
 }
