@@ -87,3 +87,12 @@ Matrix33 Matrix33::operator+=(const Matrix33& rmatrix) {
                     m_matrix[1][0] += rmatrix.m_matrix[1][0], m_matrix[1][1] += rmatrix.m_matrix[1][1], m_matrix[1][2] += rmatrix.m_matrix[1][2],
                     m_matrix[2][0] += rmatrix.m_matrix[2][0], m_matrix[2][1] += rmatrix.m_matrix[2][1], m_matrix[2][2] += rmatrix.m_matrix[2][2]);
 }
+
+Matrix33 operator*(int rdou, const Matrix33& rmatrix) {
+    return rmatrix * rdou;
+}
+
+Matrix33::operator double() const {
+    return m_matrix[0][0] * m_matrix[1][1] * m_matrix[2][2] + m_matrix[0][1] * m_matrix[1][2] * m_matrix[2][0] + m_matrix[0][2] * m_matrix[1][0] * m_matrix[2][1] -
+        m_matrix[0][0] * m_matrix[1][2] * m_matrix[2][1] - m_matrix[0][1] * m_matrix[1][0] * m_matrix[2][2] - m_matrix[0][2] * m_matrix[1][1] * m_matrix[2][0];
+}

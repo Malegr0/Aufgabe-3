@@ -68,10 +68,14 @@ int main()
     std::cout << "\n\nAufgabe 3\n=========\n" << std::endl;
 
     // Testen Sie folgende Anweisung:
-    //Matrix33 matResult4 = 5 * matA;
+    Matrix33 matResult4 = 5 * matA;
+    std::cout << "Output matResult4:\n" << matResult4.toString() << std::endl;
 
     // Warum funktioniert die Anweisung nicht? aendern Sie den '*' Operator so,
     // dass der Ausdruck funktioniert!
+    //      Lösung: Die bisherige Implementierungen des überladeten *-Operator erwartet auf der linken Seite eine Matrix und auf der rechten Seite des
+    //              Operators eine Zahl. Da dies bei dieser Schreibweise nicht gegeben ist, funktioniert der normale Aufruf nicht.
+    //              Erst mit der Implementierung einer weiteren *-Überladungsmethode kann diese Rechnung durchgeführt werden.
 
 
 
@@ -83,7 +87,8 @@ int main()
 
     Matrix33 matZ(1, 3, 5, 1, -2, 1, 1.5, 3.5, -4);
     // Erzeugen Sie einen Konvertierungsoperator, so dass folgender Ausdruck klappt.
-    // double det = matZ;
+    double det = matZ;
+    std::cout << "Output det: " << det << "\n" << std::endl;
 
     // Der Konvertierungsoperator soll die Determinante der Matrix zurueckgeben.
     // Hinweis: http://de.wikipedia.org/wiki/Determinante#Berechnung
@@ -99,8 +104,14 @@ int main()
     // Exceptionklasse. Ein Objekt dieser Klasse soll geworfen werden, wenn 
     // bei der Verwendung der get-Funktion fehlerhafte Indizes eingegeben werden
     // z.B.
-
-    double y = matX.get(3, 3);
+    try {
+        double y = matX.get(3, 3);
+        std::cout << y << std::endl;
+    }
+    catch (const CoefficientException& e) {
+        std::cout << e.getError() << std::endl;
+    }
+    
 
     return 0;
 }
