@@ -17,7 +17,7 @@ public:
         double m21, double m22, double m23,
         double m31, double m32, double m33);
 
-    double get(int row, int col) const {
+    double& get(int row, int col) {
         if (row >= 3 || col >= 3 || row < 0 || col < 0) {
             throw CoefficientException("Matrix33", "Zugriff auf Index außerhalb der Grenzen (IndexOutOfBounds)");
         }
