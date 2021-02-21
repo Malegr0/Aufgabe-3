@@ -50,11 +50,11 @@ int main()
     // Implementieren Sie die noetigen Operatoren in der Klasse, damit folgende
     // Ausdruecke richtig funktionieren und geben Sie nach jeder Rechnung die Ergebnisse aus:
 
-    //Matrix33 matResult1 = matA + matB;
-    //Matrix33 matResult2 = matA * matB;
-    //Matrix33 matResult3 = matA * 5;
-    //matResult1 += matB;
-    //Matrix33 matC = matResult2 += matB;
+    Matrix33 matResult1 = matA + matB;
+    Matrix33 matResult2 = matA * matB;
+    Matrix33 matResult3 = matA * 5;
+    matResult1 += matB;
+    Matrix33 matC = matResult2 += matB;
 
 
     // ------------------------------------------------------------------------

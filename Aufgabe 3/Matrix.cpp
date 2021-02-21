@@ -70,10 +70,10 @@ Matrix33 Matrix33::operator*(const Matrix33& rmatrix) const {
                     m_matrix[2][0] * rmatrix.m_matrix[0][2], m_matrix[2][1] * rmatrix.m_matrix[1][2], m_matrix[2][2] * rmatrix.m_matrix[2][2]);
 }
 
-Matrix33 Matrix33::operator*(double& rdou) const {
-    return Matrix33(m_matrix[0][0] * rdou, m_matrix[0][1] * rdou, m_matrix[0][2] * rdou,
-                    m_matrix[1][0] * rdou, m_matrix[1][1] * rdou, m_matrix[1][2] * rdou,
-                    m_matrix[2][0] * rdou, m_matrix[2][1] * rdou, m_matrix[2][2] * rdou);
+Matrix33 Matrix33::operator*(int rint) const {
+    return Matrix33(m_matrix[0][0] * rint, m_matrix[0][1] * rint, m_matrix[0][2] * rint,
+                    m_matrix[1][0] * rint, m_matrix[1][1] * rint, m_matrix[1][2] * rint,
+                    m_matrix[2][0] * rint, m_matrix[2][1] * rint, m_matrix[2][2] * rint);
 }
 
 Matrix33 Matrix33::operator+=(const Matrix33& rmatrix) const {

@@ -23,7 +23,7 @@ public:
     //Operator
     Matrix33 operator+(const Matrix33& rmatrix) const;
     Matrix33 operator*(const Matrix33& rmatrix) const;
-    Matrix33 operator*(double& rdou) const;
+    Matrix33 operator*(int rdou) const;
     Matrix33 operator+=(const Matrix33& rmatrix) const;
 
 
