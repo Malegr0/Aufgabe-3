@@ -12,7 +12,7 @@ public:
     static Matrix33 ones();
 
     // Construction
-    Matrix33(double m11, double ml2, double m13,
+    Matrix33(double m11, double m12, double m13,
         double m21, double m22, double m23,
         double m31, double m32, double m33);
 
