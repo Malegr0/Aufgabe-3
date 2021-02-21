@@ -20,6 +20,9 @@ public:
 
     std::string toString() const;
 
+    //Operator
+    Matrix33 operator+(const Matrix33& rmatrix) const;
+
 
 private:
     double m_matrix[3][3];

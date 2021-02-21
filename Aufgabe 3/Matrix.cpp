@@ -25,9 +25,7 @@ Matrix33 Matrix33::ones()
 
 Matrix33::Matrix33(double m11, double m12, double m13, double m21, double m22, double m23, double m31, double m32, double m33)
 {
-    m_matrix[0][0] = m11;
-    m_matrix[0][1] = m12;
-    m_matrix[0][2] = m13;
+    m_matrix[0][0] = m11; m_matrix[0][1] = m12; m_matrix[0][2] = m13;
     m_matrix[1][0] = m21; m_matrix[1][1] = m22; m_matrix[1][2] = m23;
     m_matrix[2][0] = m31; m_matrix[2][1] = m32; m_matrix[2][2] = m33;
 }
@@ -58,3 +56,12 @@ std::string Matrix33::toString() const
 
 // ----------------------------------------------------------------------------
 
+//Operator
+
+Matrix33 Matrix33::operator+(const Matrix33& rmatrix) const {
+
+
+
+
+    return ;
+}
