@@ -20,8 +20,12 @@ int main()
     std::cout << "\n\nAufgabe 1\n=========\n" << std::endl;
 
     // Wo steckt der eigentliche Konstruktoraufruf bei der folgenden Anweisung?
+    //      Lösung: Der eigentliche Konstruktoraufruf passiert in der ones()-Methode. Diese gibt das erstellte Objekt zurück.
     // Wieso kann die Funktion ones() mit dem Scope-Operator, ohne Objekt aufgerunfen werden?
+    //      Lösung: Die Methode ones() ist als statische und öffentliche Methode deklariert, wodurch sie eine Klassenmehtode darstellt.
+    //              Dies sorgt dafür, dass die MEthode direkt ohne eine Objektreferenz aufgerufen werden kann.
     Matrix33 mat1 = Matrix33::ones();
+
 
     // Ueber die Funktion Matrix33::get koennen sie einen Wert in der Matrix abfragen:
     std::cout << "Wert in Matrix(2,2): " << mat1.get(1, 1) << std::endl;
